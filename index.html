@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="kasir, manajemen inventaris, bisnis, transaksi, kasir efisien, aplikasi web"
+    />
+    <meta name="author" content="dityaskr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cashier WebApp" />
+    <meta
+      name="description"
+      content="Ringankan transaksi, kelola inventaris dengan mudah, dan tetap kompetitif. Solusi kasir intuitif untuk masa depan manajemen bisnis yang efisien."
+    />
+    <meta
+      property="og:image"
+      content="https://i.pinimg.com/736x/d9/ba/f2/d9baf22ebea006ae266d664c16dff857.jpg"
+    />
+    <meta property="og:url" content="https://cashier-wp.vercel.app" />
+    <meta property="og:type" content="website" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      async
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      async
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url(assets/background.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #title {
+        margin-top: 0;
+        position: relative;
+      }
+
+      #title::after {
+        content: "_";
+        display: inline-block;
+        margin-left: 5px;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      main {
+        flex: 1;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+    </style>
+    <title>Cashier WebApp</title>
+    <link
+      rel="icon"
+      href="assets/favicon.ico"
+      type="image/x-icon"
+      sizes="16x16 32x32 48x48"
+    />
+  </head>
+
+  <body class="bg-white bg-backcdrop-blur">
+    <!-- Navigation -->
+    <nav class="navbar lg:px-20 px-10 sticky top-0 z-50 bg-white shadow-sm">
+      <div class="flex-1">
+        <div class="pb-2 text-center">
+          <a class="text-xl font-bold text-sky-500">
+            Cashier<span
+              class="bg-sky-500 px-2 py-1 rounded-lg text-xs text-white"
+              >WP</span
+            >
+          </a>
+          <p class="text-sm text-black">Kelola Inventaris Kamu</p>
+        </div>
+      </div>
+      <div class="flex-none gap-5">
+        <button
+          class="bg-gradient-to-r from-sky-400 from-30% to-sky-600 to-70% font-bold lg:px-12 px-8 py-1 rounded-full text-base text-white hover:cursor-pointer hover:bg-gradient-to-l transition-colors ease-in-out duration-300"
+          onclick="document.getElementById('my_modal_7').showModal()"
+        >
+          Login
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="flex justify-center py-36">
+        <div class="text-center">
+          <h1
+            class="lg:text-5xl text-xl text-sky-500 font-bold stop-blinking"
+            id="title"
+          ></h1>
+          <p
+            class="py-6 lg:px-40 md:px-40 px-5 lg:text-xl md:text-base sm:text-xs text-black"
+          >
+            Ringankan transaksi, kelola inventaris dengan mudah, dan tetap
+            kompetitif. Solusi kasir intuitif untuk masa depan manajemen bisnis
+            yang efisien.
+          </p>
+          <a
+            class="bg-gradient-to-r from-sky-400 from-30% to-sky-600 to-70% py-3 px-8 text-white font-bold rounded-full hover:cursor-pointer"
+            onclick="document.getElementById('my_modal_7').showModal()"
+            >Mulai Sekarang</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Login Modal -->
+    <dialog id="my_modal_7" class="modal backdrop-blur">
+      <form method="dialog">
+        <button
+          class="text-black text-3xl absolute right-5 top-5"
+          onclick="document.getElementById('my_modal_7').close()"
+        >
+          ✕
+        </button>
+        <div class="flex justify-center items-center h-screen rounded-lg">
+          <div class="bg-sky-500 px-20 py-10 rounded-lg shadow-lg">
+            <h1 class="text-center text-xl font-bold text-white pb-5">
+              Login-Sekarang 🚀
+            </h1>
+            <a
+              href="main.html"
+              class="bg-slate-100 hover:bg-slate-200 text-black lg:text-xl font-bold lg:px-20 px-5 py-3 flex items-center justify-center gap-4 transition-all"
+            >
+              <ion-icon name="logo-google"></ion-icon>Masuk Dengan Google
+            </a>
+            <div class="divider text-black font-bold">OR</div>
+            <a
+              href="main.html"
+              class="bg-zinc-800 hover:bg-zinc-900 text-white lg:text-xl font-bold lg:px-20 px-5 py-3 flex items-center justify-center gap-4 transition-all"
+            >
+              <ion-icon name="logo-github"></ion-icon> Masuk Dengan Github
+            </a>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 text-base-content text-black">
+      <aside>
+        <p>Copyright © 2023 - All right reserved by Dityaskr</p>
+      </aside>
+    </footer>
+
+    <!-- Script TypeWriter -->
+    <script>
+      const dynamicText = document.getElementById("title");
+      const words = [
+        "Peningkatan Transaksi Tanpa Ribet",
+        "Kelola Kasir Anda dengan Mudah",
+      ];
+
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typingSpeed = 75;
+
+      const typeEffect = () => {
+        const currentWord = words[wordIndex];
+        const currentChar = currentWord.substring(0, charIndex);
+        dynamicText.textContent = currentChar;
+
+        if (!isDeleting && charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(typeEffect, typingSpeed);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(typeEffect, typingSpeed);
+        } else {
+          isDeleting = !isDeleting;
+          wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+          setTimeout(typeEffect, isDeleting ? 500 : 0);
+        }
+      };
+      typeEffect();
+    </script>
+  </body>
+</html>

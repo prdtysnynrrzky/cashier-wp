@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="kasir, manajemen inventaris, bisnis, transaksi, kasir efisien, aplikasi web"
+    />
+    <meta name="author" content="dityaskr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cashier WebApp" />
+    <meta
+      name="description"
+      content="Ringankan transaksi, kelola inventaris dengan mudah, dan tetap kompetitif. Solusi kasir intuitif untuk masa depan manajemen bisnis yang efisien."
+    />
+    <meta
+      property="og:image"
+      content="https://i.pinimg.com/736x/d9/ba/f2/d9baf22ebea006ae266d664c16dff857.jpg"
+    />
+    <meta property="og:url" content="https://cashier-wp.vercel.app" />
+    <meta property="og:type" content="website" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+    </style>
+    <title>Cashier WebApp</title>
+    <link
+      rel="icon"
+      href="assets/favicon.ico"
+      type="image/x-icon"
+      sizes="16x16 32x32 48x48"
+    />
+  </head>
+  <body class="bg-white bg-backcdrop-blur">
+    <!-- Navigation  -->
+    <nav class="navbar lg:px-20 px-10 sticky top-0 z-50 bg-white shadow-sm">
+      <div class="flex-1">
+        <div class="pb-2 text-center">
+          <a class="text-xl font-bold text-sky-500"
+            >Cashier
+            <span class="bg-sky-500 px-2 py-1 rounded-lg text-xs text-white"
+              >WP</span
+            ></a
+          >
+          <p class="text-sm text-black">Kelola Inventaris Kamu</p>
+        </div>
+      </div>
+      <div class="flex-none gap-4">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button">
+            <ion-icon name="add-outline" class="w-8 h-8 text-black"></ion-icon>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between" onclick="my_modal_2.showModal()">
+                Add Feature Idea
+                <span class="badge"
+                  ><ion-icon name="sparkles-outline"></ion-icon
+                ></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown dropdown-end">
+          <div
+            tabindex="0"
+            role="button"
+            class="btn btn-ghost btn-circle avatar"
+          >
+            <div class="w-10 rounded-full">
+              <img
+                alt="Profile User"
+                src="https://i.pinimg.com/736x/d9/ba/f2/d9baf22ebea006ae266d664c16dff857.jpg"
+              />
+            </div>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between"> Profile </a>
+            </li>
+            <li>
+              <a href="index.html" class="text-red-500 font-bold">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Add Feature Idea Modal -->
+    <dialog id="my_modal_2" class="modal backdrop-blur">
+      <form method="dialog">
+        <button
+          class="text-black text-3xl absolute right-5 top-5"
+          onclick="document.getElementById('my_modal_2').close()"
+        >
+          ✕
+        </button>
+        <div class="flex justify-center items-center h-screen rounded-lg">
+          <div class="bg-sky-500 px-20 py-10 rounded-lg shadow-lg">
+            <h1 class="text-center text-xl font-bold text-white pb-5">
+              Add Feature Idea ✨
+            </h1>
+            <a
+              href="mailto:pradityasony4@gmail.com"
+              class="bg-slate-100 hover:bg-slate-200 text-black lg:text-xl font-bold lg:px-20 px-5 py-3 flex items-center justify-center gap-4 transition-all"
+            >
+              <ion-icon name="mail-outline"></ion-icon>Berikan Idea Fitur
+              Melalui Email
+            </a>
+            <div class="divider text-black font-bold">OR</div>
+            <a
+              href="https://api.whatsapp.com/send?phone=6281803391616"
+              class="bg-green-400 hover:bg-green-600 text-black lg:text-xl font-bold lg:px-20 px-5 py-3 flex items-center justify-center gap-4 transition-all"
+            >
+              <ion-icon name="logo-whatsapp"></ion-icon>Contact Saya Melalui
+              Whats-App
+            </a>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Kasir/Data/Laporan Section -->
+    <main>
+      <section class="px-10 lg:flex md:flex justify-center">
+        <!-- Left Column (Image) -->
+        <div class="lg:w-1/2 md:w-full mb-10 lg:mb-0">
+          <img
+            class="w-full object-cover rounded-lg lg:aspect-auto md:aspect-[9/16] aspect-[21/9]"
+            src="assets/kobo-ehek.jpg"
+            alt="Banner"
+          />
+        </div>
+
+        <!-- Right Column (Content) -->
+        <div class="lg:w-1/2 md:w-full text-xl text-black">
+          <div role="tablist" class="tabs tabs-bordered">
+            <input
+              type="radio"
+              name="my_tabs_1"
+              role="tab"
+              class="tab text-black font-bold"
+              aria-label="Kasir"
+              checked
+            />
+            <div
+              role="tabpanel"
+              class="tab-content p-10 sm:px-10 overflow-x-auto"
+            >
+              <div class="flex">
+                <h1 class="text-2xl font-bold pb-2 grow">
+                  Data-Barang - [Keranjang]
+                </h1>
+                <button
+                  class="btn btn-sm btn-info text-white font-bold italic"
+                  onclick="my_modal_3.showModal()"
+                >
+                  tambah
+                </button>
+              </div>
+              <div class="overflow-x-auto mb-10">
+                <table class="table">
+                  <thead class="text-sky-500">
+                    <tr>
+                      <th></th>
+                      <th>Nama Barang</th>
+                      <th>Harga Barang</th>
+                      <th>Jumlah</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tb-kasir"></tbody>
+                </table>
+              </div>
+
+              <!-- Modal Kasir -->
+              <dialog id="my_modal_3" class="modal backdrop-blur">
+                <div class="bg-sky-500 px-10 py-6 rounded-lg">
+                  <form id="formTambahBarang" class="p-4">
+                    <h3 class="font-bold text-lg text-center my-3 text-white">
+                      Tambah Barang
+                    </h3>
+                    <div class="items-center">
+                      <label
+                        for="namaBarang"
+                        class="block text-sm font-bold text-white"
+                        >Nama Barang:</label
+                      >
+                      <input
+                        type="text"
+                        id="namaBarang"
+                        name="namaBarang"
+                        placeholder="Masukan Nama Barang"
+                        class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                        required
+                      />
+                    </div>
+                    <div class="items-center">
+                      <label
+                        for="hargaBarang"
+                        class="block text-sm font-bold text-white"
+                        >Harga Barang:</label
+                      >
+                      <input
+                        type="number"
+                        id="hargaBarang"
+                        name="hargaBarang"
+                        placeholder="Masukan Harga Barang"
+                        class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                        required
+                      />
+                    </div>
+                    <div class="items-center">
+                      <label
+                        for="jumlahBarang"
+                        class="block text-sm font-bold text-white"
+                        >Jumlah Barang:</label
+                      >
+                      <input
+                        type="number"
+                        id="jumlahBarang"
+                        name="jumlahBarang"
+                        placeholder="Masukan Jumlah Barang"
+                        class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                        required
+                      />
+                    </div>
+                    <div class="mt-3">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-danger text-white font-bold"
+                        onclick="my_modal_3.close()"
+                      >
+                        Batal
+                      </button>
+                      <button
+                        type="submit"
+                        class="btn btn-sm btn-success text-white font-bold ml-2"
+                        id="tombolTambah"
+                      >
+                        Tambah
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </dialog>
+
+              <h1 class="text-2xl font-bold pb-2">Pembayaran</h1>
+              <div class="card p-5">
+                <div class="flex gap-20 mb-10 items-center">
+                  <h1 class="text-xl text-black font-bold">Total Bayar</h1>
+                  <p id="totalBayar">7500</p>
+                </div>
+                <div class="flex lg:gap-24 md:gap-5 gap-1 mb-10 items-center">
+                  <h1 class="text-xl text-black font-bold">Tunai</h1>
+                  <input
+                    type="number"
+                    id="tunai"
+                    name="tunai"
+                    placeholder="Type here"
+                    class="input input-bordered input-info input-sm bg-transparent"
+                  />
+                  <button
+                    class="btn btn-sm btn-success text-white font-bold"
+                    id="bayar"
+                  >
+                    bayar
+                  </button>
+                </div>
+                <div class="flex gap-24 mb-10 items-center">
+                  <h1 class="text-xl text-black font-bold">Kembalian</h1>
+                  <p id="totalKembalian">0</p>
+                </div>
+                <button
+                  class="btn btn-md btn-info w-full text-white font-bold"
+                  id="print"
+                >
+                  print | cetak struk
+                </button>
+              </div>
+            </div>
+
+            <input
+              type="radio"
+              name="my_tabs_1"
+              role="tab"
+              class="tab text-black font-bold"
+              aria-label="Data"
+            />
+            <div
+              role="tabpanel"
+              class="tab-content p-10 sm:px-10 overflow-x-auto"
+            >
+              <div class="flex">
+                <h1 class="text-2xl font-bold pb-2 grow">
+                  Data-Barang - [Tersedia]
+                </h1>
+                <button
+                  class="btn btn-sm btn-info text-white font-bold italic"
+                  onclick="my_modal_4.showModal()"
+                  id="addButton"
+                >
+                  Tambah
+                </button>
+              </div>
+              <div class="overflow-x-auto mb-10">
+                <table class="table">
+                  <thead class="text-sky-500">
+                    <tr>
+                      <th></th>
+                      <th>Nama Barang</th>
+                      <th>Harga Beli</th>
+                      <th>Harga Jual</th>
+                      <th>Jumlah Stok</th>
+                      <th>Aksi</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tb-dataBarang"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Modal dataBarang -->
+            <dialog id="my_modal_4" class="modal backdrop-blur">
+              <div class="bg-sky-500 px-10 py-6 rounded-lg">
+                <form id="formKelolaBarang" class="p-4">
+                  <h3 class="font-bold text-lg text-center my-3 text-white">
+                    Kelola Barang
+                  </h3>
+                  <div class="items-center">
+                    <label
+                      for="namaBarang"
+                      class="block text-sm font-bold text-white"
+                      >Nama Barang:</label
+                    >
+                    <input
+                      type="text"
+                      id="namaBarangs"
+                      name="namaBarangs"
+                      placeholder="Masukan Nama Barang"
+                      class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                      required
+                    />
+                  </div>
+                  <div class="items-center">
+                    <label
+                      for="hargaBeli"
+                      class="block text-sm font-bold text-white"
+                      >Harga Barang:</label
+                    >
+                    <input
+                      type="number"
+                      id="hargaBeli"
+                      name="hargaBeli"
+                      placeholder="Masukan Harga Beli"
+                      class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                      required
+                    />
+                  </div>
+                  <div class="items-center">
+                    <label
+                      for="hargaJual"
+                      class="block text-sm font-bold text-white"
+                      >Harga Barang:</label
+                    >
+                    <input
+                      type="number"
+                      id="hargaJual"
+                      name="hargaJual"
+                      placeholder="Masukan Harga Jual"
+                      class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                      required
+                    />
+                  </div>
+                  <div class="items-center">
+                    <label
+                      for="stock"
+                      class="block text-sm font-bold text-white"
+                      >Jumlah Barang:</label
+                    >
+                    <input
+                      type="number"
+                      id="stock"
+                      name="stock"
+                      placeholder="Masukan Jumlah Stock"
+                      class="input input-bordered input-sm bg-gray-950 text-white w-full"
+                      required
+                    />
+                  </div>
+                  <div class="mt-3">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-danger text-white font-bold"
+                      onclick="my_modal_4.close()"
+                    >
+                      Batal
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-success text-white font-bold ml-2"
+                    >
+                      Simpan
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </dialog>
+
+            <input
+              type="radio"
+              name="my_tabs_1"
+              role="tab"
+              class="tab text-black font-bold"
+              aria-label="Laporan"
+            />
+            <div
+              role="tabpanel"
+              class="tab-content p-10 sm:px-10 overflow-x-auto"
+            >
+              <h1 class="text-2xl font-bold pb-2 grow">
+                Chart - [Grafik | Data Penjualan]
+              </h1>
+              <!-- Chart Canvas -->
+              <canvas
+                id="salesChart"
+                width="400"
+                height="200"
+                class="mb-10"
+              ></canvas>
+              <h1 class="text-2xl font-bold pb-2 grow">
+                Table - [Detail | Data Penjualan]
+              </h1>
+              <div class="overflow-x-auto mb-10">
+                <table class="table">
+                  <thead class="text-sky-500">
+                    <tr>
+                      <th></th>
+                      <th>Tanggal</th>
+                      <th>Nama Barang</th>
+                      <th>Harga Beli</th>
+                      <th>Harga Jual</th>
+                      <th>Stok</th>
+                      <th>Terjual</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tb-laporanPenjualan"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 text-base-content text-black">
+      <aside>
+        <p>Copyright © 2023 - All right reserved by Dityaskr</p>
+      </aside>
+    </footer>
+
+    <!-- Script Kasir -->
+    <script src="kasir.js"></script>
+
+    <!-- Script Data Barang -->
+    <script src="dataBarang.js"></script>
+
+    <!-- Script Chart & Laporan Penjualan -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="laporanPenjualan.js"></script>
+  </body>
+</html>
